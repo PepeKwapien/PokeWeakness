@@ -9,7 +9,28 @@
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">
-  <mat-option *ngFor="let option of searchOptions" [value]="option.name">
-    {{ option.name }}
-  </mat-option>
+  <ng-container
+    *ngIf="!searchOptions || searchOptions.length > 0; else nothingFound"
+  >
+    <mat-option
+      *ngFor="let option of searchOptions"
+      [value]="option.name"
+      class="option"
+    >
+      <div class="number-name-container">
+        <span class="number">#{{ option.number }}</span
+        ><span class="name">{{ option.name }}</span>
+      </div>
+      <img
+        [src]="option.image"
+        [alt]="'Image of ' + option.name"
+        class="image"
+      />
+    </mat-option>
+  </ng-container>
+  <ng-template #nothingFound>
+    <mat-option value="" (click)="searchOptions = null"
+      >No Pokemon with similar name</mat-option
+    >
+  </ng-template>
 </mat-autocomplete>

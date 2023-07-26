@@ -10,5 +10,5 @@ import { PokemonSearchOption } from 'src/app/interfaces/pokemonSearchOption.inte
 export class SearchInputComponent {
   @Input() label: string = 'Pokemon';
   @Input() inputControl: FormControl = new FormControl('');
-  @Input() searchOptions: PokemonSearchOption[] | null = [];
+  @Input() searchOptions: PokemonSearchOption[] | null = null;
 }

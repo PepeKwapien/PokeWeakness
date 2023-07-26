@@ -30,7 +30,7 @@ export class SearchService implements OnDestroy {
         .get('against')
         ?.valueChanges.pipe(
           map((phrase) => phrase.trim()),
-          debounceTime(500),
+          debounceTime(300),
           distinctUntilChanged(),
           filter((phrase) => phrase.length !== 0),
           switchMap((phrase) => this.getSearchSuggestions(phrase))
