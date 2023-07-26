@@ -1,4 +1,5 @@
 <app-search-input
   label="Pokemon"
   [inputControl]="againstFormControl"
+  [searchOptions]="searchService.againstSubject | async"
 ></app-search-input>

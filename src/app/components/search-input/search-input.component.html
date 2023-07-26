@@ -1,4 +1,15 @@
 <mat-form-field class="example-full-width">
   <mat-label>{{ label }}</mat-label>
-  <input matInput placeholder="Ex. Charizard" [formControl]="inputControl" />
+  <input
+    matInput
+    placeholder="Ex. Charizard"
+    [formControl]="inputControl"
+    [matAutocomplete]="auto"
+  />
 </mat-form-field>
+
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let option of searchOptions" [value]="option.name">
+    {{ option.name }}
+  </mat-option>
+</mat-autocomplete>

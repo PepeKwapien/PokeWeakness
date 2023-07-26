@@ -8,7 +8,10 @@ import {
   filter,
   Subscription,
   switchMap,
+  Subject,
+  Observable,
 } from 'rxjs';
+import { PokemonSearchOption } from '../interfaces/pokemonSearchOption.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +19,10 @@ import {
 export class SearchService implements OnDestroy {
   private _searchFormGroup: FormGroup;
   private _subscriptions: (Subscription | undefined)[] = [];
+  private _againstSubject: Subject<PokemonSearchOption[]>;
 
   constructor(private http: HttpClient, formBuilder: FormBuilder) {
+    this._againstSubject = new Subject();
     this._searchFormGroup = formBuilder.group({ against: '' });
 
     this._subscriptions.push(
@@ -30,7 +35,7 @@ export class SearchService implements OnDestroy {
           filter((phrase) => phrase.length !== 0),
           switchMap((phrase) => this.getSearchSuggestions(phrase))
         )
-        .subscribe((value) => console.log(value))
+        .subscribe((value) => this._againstSubject.next(value))
     );
   }
 
@@ -38,8 +43,16 @@ export class SearchService implements OnDestroy {
     return this._searchFormGroup;
   }
 
-  public getSearchSuggestions(pokemonName: string) {
-    return this.http.get(`https://localhost:7237/pokemon/${pokemonName}`);
+  public get againstSubject(): Observable<PokemonSearchOption[]> {
+    return this._againstSubject;
+  }
+
+  public getSearchSuggestions(
+    pokemonName: string
+  ): Observable<PokemonSearchOption[]> {
+    return this.http.get<PokemonSearchOption[]>(
+      `https://localhost:7237/pokemon/${pokemonName}`
+    );
   }
 
   ngOnDestroy(): void {
