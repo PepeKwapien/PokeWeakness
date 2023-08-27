@@ -11,6 +11,6 @@ export class SearchFormComponent {
   constructor(public searchService: SearchService) {}
 
   public get againstFormControl(): FormControl {
-    return this.searchService.searchFormGroup.get('against')! as FormControl;
+    return this.searchService.pokemonFormControl;
   }
 }

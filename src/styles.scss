@@ -1,4 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  @include flex-center();
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #5f5e96;
+}
+
+.max-inner-width {
+  max-width: 80%;
+  margin: auto;
+}
+
+.flex-center-column {
+  @include flex-center();
+  flex-direction: column;
+}

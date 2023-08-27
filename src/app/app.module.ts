@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, SearchInputComponent],
+  declarations: [AppComponent, SearchFormComponent, SearchInputComponent, LandingPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {
   map,
   debounceTime,
@@ -23,11 +23,11 @@ export class SearchService implements OnDestroy {
 
   constructor(private http: HttpClient, formBuilder: FormBuilder) {
     this._againstSubject = new Subject();
-    this._searchFormGroup = formBuilder.group({ against: '' });
+    this._searchFormGroup = formBuilder.group({ pokemon: '' });
 
     this._subscriptions.push(
       this._searchFormGroup
-        .get('against')
+        .get('pokemon')
         ?.valueChanges.pipe(
           map((phrase) => phrase.trim()),
           debounceTime(300),
@@ -39,8 +39,8 @@ export class SearchService implements OnDestroy {
     );
   }
 
-  public get searchFormGroup(): FormGroup {
-    return this._searchFormGroup;
+  public get pokemonFormControl(): FormControl {
+    return this._searchFormGroup.get('pokemon')! as FormControl;
   }
 
   public get againstSubject(): Observable<PokemonSearchOption[]> {
@@ -51,7 +51,7 @@ export class SearchService implements OnDestroy {
     pokemonName: string
   ): Observable<PokemonSearchOption[]> {
     return this.http.get<PokemonSearchOption[]>(
-      `https://localhost:7237/pokemon/${pokemonName}`
+      `https://localhost:7237/pokemon/search/${pokemonName}`
     );
   }
 
