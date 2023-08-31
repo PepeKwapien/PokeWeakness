@@ -1,6 +1,22 @@
 <p
+  *ngIf="!secondaryType; else doubleTypes"
   class="type-box-border type-box-padding type-box-font"
-  [style]="{ 'border-color': pokemonType.color, color: pokemonType.color }"
+  [style]="{ 'background-color': primaryType.color }"
 >
-  {{ pokemonType.name }}
+  {{ primaryType.name }}
 </p>
+
+<ng-template #doubleTypes>
+  <p
+    class="type-box-border type-box-padding type-box-font"
+    [style.background]="
+      'linear-gradient(90deg, ' +
+      this.primaryType.color +
+      ' 20%, ' +
+      this.secondaryType?.color +
+      ' 100%)'
+    "
+  >
+    {{ primaryType.name }}/{{ secondaryType?.name ?? "Error" }}
+  </p>
+</ng-template>

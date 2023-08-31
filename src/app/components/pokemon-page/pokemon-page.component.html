@@ -14,10 +14,9 @@
     <div class="flex-center-column">
       <h2 class="type-box-pokemon-name">{{ pokemon.name }}</h2>
       <div class="flex-space-around-row type-box-types-container">
-        <app-type-box [pokemonType]="pokemon.primaryType"></app-type-box>
         <app-type-box
-          *ngIf="pokemon.secondaryType"
-          [pokemonType]="pokemon.secondaryType"
+          [primaryType]="pokemon.primaryType"
+          [secondaryType]="pokemon.secondaryType"
         ></app-type-box>
       </div>
     </div>
