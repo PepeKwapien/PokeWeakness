@@ -1,22 +1,12 @@
 <p
-  *ngIf="!secondaryType; else doubleTypes"
   class="type-box-border type-box-padding type-box-font"
-  [style]="{ 'background-color': primaryType.color }"
+  [style.background]="
+    'linear-gradient(90deg, ' +
+    this.primaryType.color +
+    ' 20%, ' +
+    (this.secondaryType?.color ?? this.primaryType.color) +
+    ' 100%)'
+  "
 >
-  {{ primaryType.name }}
+  {{ primaryType.name }}{{ secondaryType ? "/" + secondaryType.name : "" }}
 </p>
-
-<ng-template #doubleTypes>
-  <p
-    class="type-box-border type-box-padding type-box-font"
-    [style.background]="
-      'linear-gradient(90deg, ' +
-      this.primaryType.color +
-      ' 20%, ' +
-      this.secondaryType?.color +
-      ' 100%)'
-    "
-  >
-    {{ primaryType.name }}/{{ secondaryType?.name ?? "Error" }}
-  </p>
-</ng-template>

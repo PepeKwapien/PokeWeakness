@@ -14,6 +14,6 @@ import { PokemonType } from 'src/app/interfaces/pokemonType.interface';
   styleUrls: ['./type-box.component.scss'],
 })
 export class TypeBoxComponent {
-  @Input() primaryType: PokemonType = { name: 'Grass', color: '#7AC74C' };
+  @Input() primaryType: PokemonType = { name: 'Death', color: 'black' };
   @Input() secondaryType?: PokemonType;
 }
