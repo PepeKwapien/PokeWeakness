@@ -12,9 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.component';
+import { TypeBoxComponent } from './components/type-box/type-box.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, SearchInputComponent, LandingPageComponent],
+  declarations: [AppComponent, SearchFormComponent, SearchInputComponent, LandingPageComponent, PokemonPageComponent, TypeBoxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

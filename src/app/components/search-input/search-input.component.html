@@ -16,6 +16,7 @@
       *ngFor="let option of searchOptions"
       [value]="option.name"
       class="option"
+      (click)="pokemonName.next(option.name)"
     >
       <span class="number">#{{ option.number }}</span
       ><span class="name">{{ option.name }}</span>

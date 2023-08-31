@@ -1,0 +1,13 @@
+.type-box-pokemon-image {
+  max-width: 50%;
+}
+
+.type-box-types-container {
+  app-type-box + app-type-box {
+    margin-left: 1em;
+  }
+}
+
+.type-box-pokemon-name {
+  font-size: 1.65rem;
+}

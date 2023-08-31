@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -23,4 +27,20 @@ body {
 .flex-center-column {
   @include flex-center();
   flex-direction: column;
+}
+
+.flex-center-row {
+  @include flex-center();
+  flex-direction: row;
+}
+
+.flex-space-around-row {
+  @include flex-center();
+  justify-content: space-around;
+}
+
+.flex-children-fill {
+  & > * {
+    flex: 1;
+  }
 }

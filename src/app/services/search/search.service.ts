@@ -10,8 +10,10 @@ import {
   switchMap,
   Subject,
   Observable,
+  shareReplay,
 } from 'rxjs';
-import { PokemonSearchOption } from '../interfaces/pokemonSearchOption.interface';
+import { PokemonSearchOption } from '../../interfaces/pokemonSearchOption.interface';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -51,7 +53,7 @@ export class SearchService implements OnDestroy {
     pokemonName: string
   ): Observable<PokemonSearchOption[]> {
     return this.http.get<PokemonSearchOption[]>(
-      `https://localhost:7237/pokemon/search/${pokemonName}`
+      `${environment.pokemonApiUrl}/pokemon/search/${pokemonName}`
     );
   }
 
