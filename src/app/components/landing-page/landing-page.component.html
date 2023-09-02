@@ -1,10 +1,21 @@
 <div class="max-inner-width flex-center">
-  <img src="assets/images/logo.png" alt="PokeWeakness logo" />
-  <div class="divided">
-    <p class="entry-text">
-      The one and only place for all Pokemon beginners to <s>catch</s> beat them
-      all!
-    </p>
+  <div class="overflow-hidden" *ngIf="isOnRootPage()" @openClosed>
+    <img src="assets/images/logo.png" alt="PokeWeakness logo" />
+    <div class="divided">
+      <p class="entry-text">
+        The one and only place for all Pokemon beginners to <s>catch</s> beat
+        them all!
+      </p>
+    </div>
   </div>
-  <app-search-form></app-search-form>
+  <div class="flex-space-around-row search-container">
+    <img
+      @visibleHidden
+      *ngIf="!isOnRootPage()"
+      src="assets/images/logo2.png"
+      alt="PokeWeakness logo"
+      class="small-logo"
+    />
+    <app-search-form></app-search-form>
+  </div>
 </div>

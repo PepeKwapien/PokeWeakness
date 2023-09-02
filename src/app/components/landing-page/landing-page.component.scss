@@ -2,6 +2,20 @@ img {
   width: 100%;
 }
 
+.search-container {
+  align-items: start;
+}
+
+.small-logo {
+  max-width: 3rem;
+  margin-right: 2rem;
+  margin-top: 0.9rem;
+}
+
+app-search-form {
+  flex: 1;
+}
+
 .divided {
   display: flex;
   flex-direction: column;

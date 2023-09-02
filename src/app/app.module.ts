@@ -16,7 +16,14 @@ import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.com
 import { TypeBoxComponent } from './components/type-box/type-box.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, SearchInputComponent, LandingPageComponent, PokemonPageComponent, TypeBoxComponent],
+  declarations: [
+    AppComponent,
+    SearchFormComponent,
+    SearchInputComponent,
+    LandingPageComponent,
+    PokemonPageComponent,
+    TypeBoxComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
