@@ -1,12 +1,12 @@
 <div class="max-inner-width">
-  <div class="divided-before">
-    <div
-      *ngIf="
-        pokemonService.pokemonGeneralInformation$ | async as pokemon;
-        else loading
-      "
-      class="flex-space-around-row flex-children-fill pokemon-page-header"
-    >
+  <div
+    *ngIf="
+      pokemonService.pokemonGeneralInformationSubject$ | async as pokemon;
+      else loading
+    "
+    class="divided-before"
+  >
+    <div class="flex-space-around-row flex-children-fill pokemon-page-header">
       <img
         [src]="pokemon.image"
         [alt]="'Image of ' + pokemon.name"
@@ -23,5 +23,7 @@
       </div>
     </div>
   </div>
-  <ng-template #loading>Loading...</ng-template>
+  <ng-template #loading>
+    <app-spinner></app-spinner>
+  </ng-template>
 </div>

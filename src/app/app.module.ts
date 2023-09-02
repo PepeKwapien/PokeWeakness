@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.component';
 import { TypeBoxComponent } from './components/type-box/type-box.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TypeBoxComponent } from './components/type-box/type-box.component';
     LandingPageComponent,
     PokemonPageComponent,
     TypeBoxComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

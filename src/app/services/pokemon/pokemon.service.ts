@@ -8,6 +8,7 @@ import {
   filter,
   map,
   switchMap,
+  tap,
 } from 'rxjs';
 import { PokemonGeneralInformation } from 'src/app/interfaces/pokemonGeneralInformation.interface';
 import { environment } from 'src/environments/environment.development';
@@ -15,27 +16,45 @@ import { environment } from 'src/environments/environment.development';
 @Injectable({
   providedIn: 'root',
 })
-export class PokemonService {
+export class PokemonService implements OnDestroy {
   private _pokemonNameSubject$: BehaviorSubject<string>;
-  private _pokemonGeneralInformation$: Observable<PokemonGeneralInformation>;
+  private _pokemonGeneralInformationSubject$: BehaviorSubject<
+    PokemonGeneralInformation | undefined
+  >;
+  private _pokemonGeneralInformationSubscription$: Subscription;
 
   constructor(private http: HttpClient) {
     this._pokemonNameSubject$ = new BehaviorSubject('');
+    this._pokemonGeneralInformationSubject$ = new BehaviorSubject<
+      PokemonGeneralInformation | undefined
+    >(undefined);
 
-    this._pokemonGeneralInformation$ = this._pokemonNameSubject$.pipe(
-      map((name) => name.trim()),
-      distinctUntilChanged(),
-      filter((name) => name.length !== 0),
-      switchMap((name) => this.getPokemonGeneralInformation(name))
-    );
+    this._pokemonGeneralInformationSubscription$ = this._pokemonNameSubject$
+      .pipe(
+        map((name) => name.trim()),
+        distinctUntilChanged(),
+        filter((name) => name.length !== 0),
+        switchMap((name) => {
+          this._pokemonGeneralInformationSubject$.next(undefined);
+          return this.getPokemonGeneralInformation(name);
+        }),
+        tap((pokemon) => this._pokemonGeneralInformationSubject$.next(pokemon))
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this._pokemonGeneralInformationSubscription$.unsubscribe();
   }
 
   public get pokemonNameSubject$(): BehaviorSubject<string> {
     return this._pokemonNameSubject$;
   }
 
-  public get pokemonGeneralInformation$(): Observable<PokemonGeneralInformation> {
-    return this._pokemonGeneralInformation$;
+  public get pokemonGeneralInformationSubject$(): BehaviorSubject<
+    PokemonGeneralInformation | undefined
+  > {
+    return this._pokemonGeneralInformationSubject$;
   }
 
   private getPokemonGeneralInformation(
