@@ -16,27 +16,6 @@ app-search-form {
   flex: 1;
 }
 
-.divided {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em 0em 2em 0;
-}
-
-.divided::after {
-  content: "";
-  height: 2px;
-  width: 100%;
-  background-color: black;
-}
-
-.divided::before {
-  content: "";
-  height: 1.5px;
-  width: 100%;
-  background-color: black;
-}
-
 .entry-text {
   font-size: 1rem;
   text-align: center;

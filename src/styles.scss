@@ -49,6 +49,31 @@ app-root {
   }
 }
 
+.divided,
+.divided-after,
+.divided-before {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0em 2em 0;
+}
+
+.divided::after,
+.divided-after::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+.divided::before,
+.divided-before::before {
+  content: "";
+  height: 1.5px;
+  width: 100%;
+  background-color: black;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
