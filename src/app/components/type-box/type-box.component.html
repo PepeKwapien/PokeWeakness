@@ -1,12 +1,11 @@
 <p
-  class="type-box-border type-box-padding type-box-font"
-  [style.background]="
-    'linear-gradient(90deg, ' +
-    this.primaryType.color +
-    ' 20%, ' +
-    (this.secondaryType?.color ?? this.primaryType.color) +
-    ' 100%)'
-  "
->
-  {{ primaryType.name }}{{ secondaryType ? "/" + secondaryType.name : "" }}
+    class="type-box-border type-box-padding type-box-font"
+    [style.background]="
+        'linear-gradient(90deg, ' +
+        this.primaryType.color +
+        ' 20%, ' +
+        (this.secondaryType?.color ?? this.primaryType.color) +
+        ' 100%)'
+    ">
+    {{ primaryType.name }}{{ secondaryType ? '/' + secondaryType.name : '' }}
 </p>

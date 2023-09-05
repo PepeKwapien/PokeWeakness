@@ -17,27 +17,27 @@ import { TypeBoxComponent } from './components/type-box/type-box.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SearchFormComponent,
-    SearchInputComponent,
-    LandingPageComponent,
-    PokemonPageComponent,
-    TypeBoxComponent,
-    SpinnerComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatCardModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        SearchFormComponent,
+        SearchInputComponent,
+        LandingPageComponent,
+        PokemonPageComponent,
+        TypeBoxComponent,
+        SpinnerComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+        MatCardModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

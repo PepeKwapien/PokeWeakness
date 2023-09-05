@@ -1,35 +1,21 @@
 <mat-form-field class="example-full-width">
-  <mat-label>{{ label }}</mat-label>
-  <input
-    matInput
-    placeholder="Ex. Charizard"
-    [formControl]="inputControl"
-    [matAutocomplete]="auto"
-  />
+    <mat-label>{{ label }}</mat-label>
+    <input matInput placeholder="Ex. Charizard" [formControl]="inputControl" [matAutocomplete]="auto" />
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">
-  <ng-container
-    *ngIf="!searchOptions || searchOptions.length > 0; else nothingFound"
-  >
-    <mat-option
-      *ngFor="let option of searchOptions"
-      [value]="option.name"
-      class="option"
-      (click)="pokemonName.next(option.name)"
-    >
-      <span class="number">#{{ option.number }}</span
-      ><span class="name">{{ option.name }}</span>
-      <img
-        [src]="option.image"
-        [alt]="'Image of ' + option.name"
-        class="image"
-      />
-    </mat-option>
-  </ng-container>
-  <ng-template #nothingFound>
-    <mat-option value="" (click)="searchOptions = null"
-      >No Pokemon with similar name</mat-option
-    >
-  </ng-template>
+    <ng-container *ngIf="!searchOptions || searchOptions.length > 0; else nothingFound">
+        <mat-option
+            *ngFor="let option of searchOptions"
+            [value]="option.name"
+            class="option"
+            (click)="pokemonName.next(option.name)">
+            <span class="number">#{{ option.number }}</span
+            ><span class="name">{{ option.name }}</span>
+            <img [src]="option.image" [alt]="'Image of ' + option.name" class="image" />
+        </mat-option>
+    </ng-container>
+    <ng-template #nothingFound>
+        <mat-option value="" (click)="searchOptions = null">No Pokemon with similar name</mat-option>
+    </ng-template>
 </mat-autocomplete>

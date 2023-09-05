@@ -1,4 +1,4 @@
 export interface Ability {
-  name: string;
-  effect: string;
+    name: string;
+    effect: string;
 }

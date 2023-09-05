@@ -1,21 +1,21 @@
 mat-form-field,
 mat-label,
 input {
-  width: 100%;
+    width: 100%;
 }
 
 .number {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .image {
-  max-width: 10em;
+    max-width: 10em;
 }
 
 ::ng-deep mat-option > span {
-  width: 100%;
+    width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

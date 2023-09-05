@@ -1,24 +1,24 @@
 img {
-  width: 100%;
+    width: 100%;
 }
 
 .search-container {
-  align-items: start;
+    align-items: start;
 }
 
 .small-logo {
-  max-width: 3rem;
-  margin-right: 2rem;
-  margin-top: 0.9rem;
+    max-width: 3rem;
+    margin-right: 2rem;
+    margin-top: 0.9rem;
 }
 
 app-search-form {
-  flex: 1;
+    flex: 1;
 }
 
 .entry-text {
-  font-size: 1rem;
-  text-align: center;
-  margin: 2em 1.5em;
-  width: clamp(40ch, 80%, 75ch);
+    font-size: 1rem;
+    text-align: center;
+    margin: 2em 1.5em;
+    width: clamp(40ch, 80%, 75ch);
 }
