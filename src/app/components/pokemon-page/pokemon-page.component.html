@@ -1,15 +1,22 @@
 <div class="max-inner-width">
-    <div *ngIf="pokemonService.pokemonGeneralInformationSubject$ | async as pokemon; else loading" class="divided-before">
-        <div class="flex-space-around-row flex-children-fill pokemon-page-header">
-            <img [src]="pokemon.image" [alt]="'Image of ' + pokemon.name" class="type-box-pokemon-image" />
-            <div class="flex-center-column">
-                <h2 class="type-box-pokemon-name">{{ pokemon.name }}</h2>
-                <div class="flex-space-around-row type-box-types-container">
-                    <app-type-box [primaryType]="pokemon.primaryType" [secondaryType]="pokemon.secondaryType"></app-type-box>
+    <ng-container *ngIf="pokemonService.pokemonGeneralInformationSubject$ | async as pokemon; else loading">
+        <div class="divided">
+            <div class="flex-space-around-row flex-children-fill pokemon-page-header">
+                <img [src]="pokemon.image" [alt]="'Image of ' + pokemon.name" class="type-box-pokemon-image" />
+                <div class="flex-center-column">
+                    <h2 class="type-box-pokemon-name">{{ pokemon.name }}</h2>
+                    <div class="flex-space-around-row type-box-types-container">
+                        <app-type-box [primaryType]="pokemon.primaryType" [secondaryType]="pokemon.secondaryType"></app-type-box>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <app-expansion-panel title="Effectiveness" description="Effects types have against it"
+            ><app-type-effectiveness-table
+                [pokemonDefensiveCharacteristics]="pokemon.defensiveRelations"></app-type-effectiveness-table
+        ></app-expansion-panel>
+    </ng-container>
+
     <ng-template #loading>
         <app-spinner></app-spinner>
     </ng-template>

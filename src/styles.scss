@@ -21,6 +21,7 @@ body {
 
 app-root {
     width: 100%;
+    height: 100%;
 }
 
 .max-inner-width {
@@ -55,7 +56,7 @@ app-root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1em 0em 2em 0;
+    margin: 1em 0em 1em 0;
 }
 
 .divided::after,
@@ -76,4 +77,28 @@ app-root {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.shadow {
+    // Define the shadow properties
+    $shadow-color: rgba(0, 0, 0, 0.2); // Shadow color
+    $shadow-offset-x: 0px; // Horizontal offset
+    $shadow-offset-y: 4px; // Vertical offset
+    $shadow-blur: 8px; // Blur radius
+    $shadow-spread: 0px; // Spread radius
+
+    // Create the box shadow using the properties
+    box-shadow: $shadow-offset-x $shadow-offset-y $shadow-blur $shadow-spread $shadow-color;
+
+    // You can also include transitions for smooth effects
+    transition: box-shadow 0.3s ease-in-out;
+
+    // Hover effect (optional)
+    &:hover {
+        box-shadow: $shadow-offset-x $shadow-offset-y 16px $shadow-spread $shadow-color;
+    }
 }
