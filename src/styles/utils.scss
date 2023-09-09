@@ -1,0 +1,91 @@
+@import './variables.scss';
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.max-inner-width {
+    max-width: 80%;
+    margin: auto;
+}
+
+.flex-center-column {
+    @include flex-center();
+    flex-direction: column;
+}
+
+.flex-center-row {
+    @include flex-center();
+    flex-direction: row;
+}
+
+.flex-space-around-row {
+    @include flex-center();
+    justify-content: space-around;
+}
+
+.flex-children-fill {
+    & > * {
+        flex: 1;
+    }
+}
+
+.divided,
+.divided-after,
+.divided-before {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0em 1em 0;
+}
+
+.divided::after,
+.divided-after::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.divided::before,
+.divided-before::before {
+    content: '';
+    height: 1.5px;
+    width: 100%;
+    background-color: black;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.table-cell-y-padding {
+    padding-top: calc($margin + 4px) !important;
+    padding-bottom: calc($margin + 4px) !important;
+}
+
+.shadow {
+    // Define the shadow properties
+    $shadow-color: rgba(0, 0, 0, 0.2); // Shadow color
+    $shadow-offset-x: 0px; // Horizontal offset
+    $shadow-offset-y: 4px; // Vertical offset
+    $shadow-blur: 8px; // Blur radius
+    $shadow-spread: 0px; // Spread radius
+
+    // Create the box shadow using the properties
+    box-shadow: $shadow-offset-x $shadow-offset-y $shadow-blur $shadow-spread $shadow-color;
+
+    // You can also include transitions for smooth effects
+    transition: box-shadow 0.3s ease-in-out;
+
+    // Hover effect (optional)
+    &:hover {
+        box-shadow: $shadow-offset-x $shadow-offset-y 16px $shadow-spread $shadow-color;
+    }
+}

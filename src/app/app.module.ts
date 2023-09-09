@@ -19,6 +19,7 @@ import { TypeBoxComponent } from './components/type-box/type-box.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { TypeEffectivenessTableComponent } from './components/type-effectiveness-table/type-effectiveness-table.component';
+import { AbilityTableComponent } from './components/ability-table/ability-table.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { TypeEffectivenessTableComponent } from './components/type-effectiveness
         TypeBoxComponent,
         SpinnerComponent,
         ExpansionPanelComponent,
-        TypeEffectivenessTableComponent
+        TypeEffectivenessTableComponent,
+        AbilityTableComponent
     ],
     imports: [
         BrowserModule,

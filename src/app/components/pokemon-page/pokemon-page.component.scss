@@ -16,3 +16,7 @@
 .pokemon-page-header {
     width: 100%;
 }
+
+:host ::ng-deep app-expansion-panel + app-expansion-panel > mat-expansion-panel {
+    margin-top: 16px;
+}

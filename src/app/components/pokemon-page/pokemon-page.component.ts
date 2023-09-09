@@ -10,11 +10,12 @@ import { SearchService } from 'src/app/services/search/search.service';
     styleUrls: ['./pokemon-page.component.scss']
 })
 export class PokemonPageComponent {
-    constructor(
-        public pokemonService: PokemonService,
-        private activatedRoute: ActivatedRoute,
-        searchService: SearchService
-    ) {
+    public effectivenessTitle = 'Effectiveness';
+    public effectivenessDescription = 'Effects types have against it';
+    public abilityTitle = 'Abilities';
+    public abilityDescription = 'They can have side effects on your attacks!';
+
+    constructor(public pokemonService: PokemonService, private activatedRoute: ActivatedRoute, searchService: SearchService) {
         this.activatedRoute.params.pipe(first()).subscribe((params) => {
             const pokemonName: string = params['pokemon'];
             pokemonService.pokemonNameSubject$.next(pokemonName);

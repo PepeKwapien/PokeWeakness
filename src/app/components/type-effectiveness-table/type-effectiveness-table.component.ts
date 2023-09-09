@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { typeEffectivenessTableFields } from 'src/app/constants/table-fields/type-effectiveness-table-fields.const';
+import { DisplayColumnNameType } from 'src/app/helpers/display-column-names-type.helper';
 import { PokemonDefensiveCharacteristics } from 'src/app/interfaces/pokemonDefensiveCharacteristics.interface';
 import { TypesEffects } from 'src/app/interfaces/typesEffects.interface';
 
@@ -18,8 +20,8 @@ export class TypeEffectivenessTableComponent implements OnInit {
     };
 
     public dataSource: TypesEffects[] = [];
-    public displayColumns: string[] = ['multiplier', 'types'];
-    public displayColumnNames: any;
+    public displayColumns: string[] = typeEffectivenessTableFields;
+    public displayColumnNames: DisplayColumnNameType<typeof this.displayColumns>;
 
     constructor() {
         this.displayColumnNames = { multiplier: 'Multiplier', types: 'Types' };

@@ -11,10 +11,13 @@
                 </div>
             </div>
         </div>
-        <app-expansion-panel title="Effectiveness" description="Effects types have against it"
-            ><app-type-effectiveness-table
-                [pokemonDefensiveCharacteristics]="pokemon.defensiveRelations"></app-type-effectiveness-table
-        ></app-expansion-panel>
+        <app-expansion-panel [title]="effectivenessTitle" [description]="effectivenessDescription">
+            <app-type-effectiveness-table
+                [pokemonDefensiveCharacteristics]="pokemon.defensiveRelations"></app-type-effectiveness-table>
+        </app-expansion-panel>
+        <app-expansion-panel [title]="abilityTitle" [description]="abilityDescription">
+            <app-ability-table [dataSource]="pokemon.abilities"></app-ability-table>
+        </app-expansion-panel>
     </ng-container>
 
     <ng-template #loading>
