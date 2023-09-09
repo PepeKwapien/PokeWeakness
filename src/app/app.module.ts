@@ -20,6 +20,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { TypeEffectivenessTableComponent } from './components/type-effectiveness-table/type-effectiveness-table.component';
 import { AbilityTableComponent } from './components/ability-table/ability-table.component';
+import { TypeHighlightDirective } from './directives/type-highlight.directive';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { AbilityTableComponent } from './components/ability-table/ability-table.
         SpinnerComponent,
         ExpansionPanelComponent,
         TypeEffectivenessTableComponent,
-        AbilityTableComponent
+        AbilityTableComponent,
+        TypeHighlightDirective
     ],
     imports: [
         BrowserModule,

@@ -5,7 +5,7 @@
     </ng-container>
     <ng-container [matColumnDef]="displayColumns[1]">
         <th mat-header-cell *matHeaderCellDef class="text-align-center">{{ displayColumnNames[displayColumns[1]] }}</th>
-        <td mat-cell *matCellDef="let element" class="table-cell-y-padding">
+        <td mat-cell *matCellDef="let element" class="table-cell-y-padding" appTypeHighlight>
             {{ element[displayColumns[1]] }}
         </td>
     </ng-container>
