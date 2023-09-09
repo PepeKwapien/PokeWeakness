@@ -1,6 +1,9 @@
 <mat-form-field class="example-full-width">
     <mat-label>{{ label }}</mat-label>
-    <input matInput placeholder="Ex. Charizard" [formControl]="inputControl" [matAutocomplete]="auto" />
+    <div class="form-with-spinner">
+        <input matInput placeholder="Ex. Charizard" [formControl]="inputControl" [matAutocomplete]="auto" />
+        <app-spinner *ngIf="formLoading"></app-spinner>
+    </div>
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">

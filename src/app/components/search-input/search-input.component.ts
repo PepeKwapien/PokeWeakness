@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { PokemonSearchOption } from 'src/app/interfaces/pokemonSearchOption.interface';
 
 @Component({
@@ -11,5 +12,6 @@ export class SearchInputComponent {
     @Input() label: string = 'Search Pokemon';
     @Input() inputControl: FormControl = new FormControl('');
     @Input() searchOptions: PokemonSearchOption[] | null = null;
+    @Input() formLoading: boolean = false;
     @Output() pokemonName: EventEmitter<string> = new EventEmitter();
 }
