@@ -4,7 +4,7 @@
             <div class="flex-space-around-row flex-children-fill pokemon-page-header">
                 <img [src]="pokemon.image" [alt]="'Image of ' + pokemon.name" class="type-box-pokemon-image" />
                 <div class="flex-center-column">
-                    <h2 class="type-box-pokemon-name">{{ pokemon.name }}</h2>
+                    <h2 class="type-box-pokemon-name text-shadow">{{ pokemon.name }}</h2>
                     <div class="flex-space-around-row type-box-types-container">
                         <app-type-box [primaryType]="pokemon.primaryType" [secondaryType]="pokemon.secondaryType"></app-type-box>
                     </div>

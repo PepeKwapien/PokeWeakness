@@ -71,21 +71,18 @@
 }
 
 .shadow {
-    // Define the shadow properties
-    $shadow-color: rgba(0, 0, 0, 0.2); // Shadow color
-    $shadow-offset-x: 0px; // Horizontal offset
-    $shadow-offset-y: 4px; // Vertical offset
-    $shadow-blur: 8px; // Blur radius
-    $shadow-spread: 0px; // Spread radius
-
-    // Create the box shadow using the properties
     box-shadow: $shadow-offset-x $shadow-offset-y $shadow-blur $shadow-spread $shadow-color;
-
-    // You can also include transitions for smooth effects
     transition: box-shadow 0.3s ease-in-out;
 
-    // Hover effect (optional)
     &:hover {
         box-shadow: $shadow-offset-x $shadow-offset-y 16px $shadow-spread $shadow-color;
+    }
+}
+
+.text-shadow {
+    text-shadow: $text-shadow-offset-x $text-shadow-offset-y $text-shadow-blur $text-shadow-color;
+    transition: text-shadow 0.3s ease-in-out;
+    &:hover {
+        text-shadow: $text-shadow-offset-x $text-shadow-offset-y 4px $text-shadow-color;
     }
 }
