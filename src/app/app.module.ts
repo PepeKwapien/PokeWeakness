@@ -21,6 +21,8 @@ import { ExpansionPanelComponent } from './components/expansion-panel/expansion-
 import { TypeEffectivenessTableComponent } from './components/type-effectiveness-table/type-effectiveness-table.component';
 import { AbilityTableComponent } from './components/ability-table/ability-table.component';
 import { TypeHighlightDirective } from './directives/type-highlight.directive';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { StatsTableComponent } from './components/stats-table/stats-table.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +36,9 @@ import { TypeHighlightDirective } from './directives/type-highlight.directive';
         ExpansionPanelComponent,
         TypeEffectivenessTableComponent,
         AbilityTableComponent,
-        TypeHighlightDirective
+        TypeHighlightDirective,
+        ProgressBarComponent,
+        StatsTableComponent
     ],
     imports: [
         BrowserModule,

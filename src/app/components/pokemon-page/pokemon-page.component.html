@@ -18,6 +18,9 @@
         <app-expansion-panel [title]="abilityTitle" [description]="abilityDescription">
             <app-ability-table [dataSource]="pokemon.abilities"></app-ability-table>
         </app-expansion-panel>
+        <app-expansion-panel [title]="statTitle" [description]="statDescription">
+            <app-stats-table [pokemonGeneralInformation]="pokemon"></app-stats-table>
+        </app-expansion-panel>
     </ng-container>
 
     <ng-template #loading>

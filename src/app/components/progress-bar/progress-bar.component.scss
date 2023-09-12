@@ -1,0 +1,51 @@
+.rail {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+
+    & {
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            position: relative;
+            font-weight: bold;
+            z-index: 2;
+        }
+    }
+}
+
+.bar {
+    opacity: 0.65;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    background-color: red;
+    z-index: 1;
+}
+
+.weak {
+    background: rgb(248, 248, 161);
+    background: linear-gradient(90deg, rgb(248, 248, 161) 5%, rgba(246, 251, 3, 1) 50%, rgba(254, 255, 0, 1) 80%);
+}
+
+.average {
+    background: rgb(248, 248, 161);
+    background: linear-gradient(90deg, rgb(248, 248, 161) 5%, rgba(246, 251, 3, 1) 50%, rgba(255, 171, 0, 1) 80%);
+}
+
+.strong {
+    background: rgb(255, 171, 0);
+    background: linear-gradient(90deg, rgba(255, 171, 0, 1) 0%, rgba(147, 255, 0, 1) 55%, rgba(147, 255, 0, 1) 75%);
+}
+
+.epic {
+    background: rgb(255, 171, 0);
+    background: linear-gradient(90deg, rgba(255, 171, 0, 1) 0%, rgba(147, 255, 0, 1) 17%, rgba(0, 255, 55, 1) 80%);
+}

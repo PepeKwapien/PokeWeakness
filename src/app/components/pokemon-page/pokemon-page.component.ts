@@ -14,6 +14,8 @@ export class PokemonPageComponent {
     public effectivenessDescription = 'Effects types have against it';
     public abilityTitle = 'Abilities';
     public abilityDescription = 'They can have side effects on your attacks!';
+    public statTitle = 'Stats';
+    public statDescription = 'Base stats of the Pokemon';
 
     constructor(public pokemonService: PokemonService, private activatedRoute: ActivatedRoute, searchService: SearchService) {
         this.activatedRoute.params.pipe(first()).subscribe((params) => {
