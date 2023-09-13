@@ -9,10 +9,7 @@ import { SearchService } from 'src/app/services/search/search.service';
     styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent {
-    constructor(
-        public searchService: SearchService,
-        public pokemonService: PokemonService
-    ) {}
+    constructor(public searchService: SearchService, public pokemonService: PokemonService) {}
 
     public get againstFormControl(): FormControl {
         return this.searchService.pokemonFormControl;
@@ -20,5 +17,6 @@ export class SearchFormComponent {
 
     public notifyWithPokemonName(name: string) {
         this.pokemonService.pokemonNameSubject$.next(name);
+        this.pokemonService.createPokemonGeneralSubscription();
     }
 }

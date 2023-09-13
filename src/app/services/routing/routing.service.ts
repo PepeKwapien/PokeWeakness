@@ -6,19 +6,14 @@ import { Subscription, distinctUntilChanged, filter, map } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class RoutingService implements OnDestroy {
-    private _pokemonNameSubscription$: Subscription;
+export class RoutingService {
+    constructor(private router: Router) {}
 
-    constructor(pokemonService: PokemonService, router: Router) {
-        this._pokemonNameSubscription$ = pokemonService.pokemonNameSubject$
-            .pipe(
-                map((name) => name.trim()),
-                distinctUntilChanged(),
-                filter((name) => name.length !== 0)
-            )
-            .subscribe((name) => router.navigate([`/${name}`]));
+    public navigateToPokemonPage(pokemonName: string) {
+        this.router.navigate([`/${pokemonName}`]);
     }
-    ngOnDestroy(): void {
-        this._pokemonNameSubscription$.unsubscribe();
+
+    public navigateToNotFound() {
+        this.router.navigate(['/missingno']);
     }
 }

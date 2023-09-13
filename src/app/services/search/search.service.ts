@@ -53,6 +53,10 @@ export class SearchService implements OnDestroy {
         return this._searchFormGroup.get('pokemon')! as FormControl;
     }
 
+    public get pokemonFormControlValue(): string {
+        return this._searchFormGroup.get('pokemon')!.value;
+    }
+
     public get againstSubject(): Observable<PokemonSearchOption[]> {
         return this._againstSubject;
     }

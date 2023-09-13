@@ -23,6 +23,7 @@ import { AbilityTableComponent } from './components/ability-table/ability-table.
 import { TypeHighlightDirective } from './directives/type-highlight.directive';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { StatsTableComponent } from './components/stats-table/stats-table.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import { StatsTableComponent } from './components/stats-table/stats-table.compon
         AbilityTableComponent,
         TypeHighlightDirective,
         ProgressBarComponent,
-        StatsTableComponent
+        StatsTableComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,

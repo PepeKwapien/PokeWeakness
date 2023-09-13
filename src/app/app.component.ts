@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RoutingService } from './services/routing/routing.service';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +7,4 @@ import { RoutingService } from './services/routing/routing.service';
 })
 export class AppComponent {
     title = 'PokeWeakness';
-
-    constructor(routingService: RoutingService) {}
 }
