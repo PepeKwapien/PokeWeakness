@@ -69,6 +69,10 @@ export class SearchService implements OnDestroy {
         return this.http.get<PokemonSearchOption[]>(`${environment.pokemonApiUrl}/pokemon/search/${pokemonName}`);
     }
 
+    public resetSuggestions() {
+        this._againstSubject.next([]);
+    }
+
     ngOnDestroy(): void {
         this._subscriptions.unsubscribe();
     }

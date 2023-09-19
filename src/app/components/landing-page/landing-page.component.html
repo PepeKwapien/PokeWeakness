@@ -1,12 +1,18 @@
 <div class="max-inner-width flex-center">
-    <div class="overflow-hidden" *ngIf="isOnRootPage()" @openClosed>
+    <div class="overflow-hidden" *ngIf="routingService.isOnRootPage()" @openClosed>
         <img src="assets/images/logo.png" alt="PokeWeakness logo" />
         <div class="divided">
             <p class="entry-text">The one and only place for all Pokemon beginners to <s>catch</s> beat them all!</p>
         </div>
     </div>
     <div class="flex-space-around-row search-container">
-        <img @visibleHidden *ngIf="!isOnRootPage()" src="assets/images/logo2.png" alt="PokeWeakness logo" class="small-logo" />
+        <img
+            @visibleHidden
+            *ngIf="!routingService.isOnRootPage()"
+            (click)="navigateToLandingPage()"
+            src="assets/images/logo2.png"
+            alt="PokeWeakness logo"
+            class="small-logo" />
         <app-search-form></app-search-form>
     </div>
 </div>

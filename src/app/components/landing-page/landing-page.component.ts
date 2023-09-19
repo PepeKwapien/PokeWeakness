@@ -1,6 +1,8 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
+import { RoutingService } from 'src/app/services/routing/routing.service';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
     selector: 'app-landing-page',
@@ -12,9 +14,17 @@ import { Router } from '@angular/router';
     ]
 })
 export class LandingPageComponent {
-    constructor(private router: Router) {}
+    constructor(
+        public routingService: RoutingService,
+        private pokemonService: PokemonService,
+        private searchService: SearchService
+    ) {}
 
-    public isOnRootPage(): boolean {
-        return this.router.url === '/';
+    public navigateToLandingPage() {
+        this.searchService.pokemonFormControl.patchValue('');
+        this.searchService.resetSuggestions();
+        this.pokemonService.pokemonNameSubject$.next('');
+        this.pokemonService.pokemonGeneralInformationSubject$.next(undefined);
+        this.routingService.navigateToLandingPage();
     }
 }
