@@ -6,13 +6,14 @@
     </div>
 </mat-form-field>
 
-<mat-autocomplete #auto="matAutocomplete">
+<mat-autocomplete #auto="matAutocomplete" @visibleHidden>
     <ng-container *ngIf="!searchOptions || searchOptions.length > 0; else nothingFound">
         <mat-option
             *ngFor="let option of searchOptions"
             [value]="option.name"
             class="option"
-            (click)="pokemonName.next(option.name)">
+            (click)="pokemonName.next(option.name)"
+            @visibleHidden>
             <span class="number">#{{ option.number }}</span
             ><span class="name">{{ option.name }}</span>
             <img [src]="option.image" [alt]="'Image of ' + option.name" class="image" />

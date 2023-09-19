@@ -9,8 +9,11 @@ import { SearchService } from 'src/app/services/search/search.service';
     templateUrl: './landing-page.component.html',
     styleUrls: ['./landing-page.component.scss'],
     animations: [
-        trigger('openClosed', [transition(':leave', [animate('500ms 0ms ease-in-out', style({ height: 0 }))])]),
-        trigger('visibleHidden', [transition(':enter', [style({ opacity: 0 }), animate('700ms', style({ opacity: 1 }))])])
+        trigger('openClosed', [transition(':leave', [animate('700ms 0ms ease-in-out', style({ height: 0 }))])]),
+        trigger('visibleHidden', [
+            transition(':leave', [style({ opacity: 1 }), animate('700ms 0ms ease-in-out', style({ opacity: 0 }))]),
+            transition(':enter', [style({ opacity: 0 }), animate('700ms 0ms ease-in', style({ opacity: 1 }))])
+        ])
     ]
 })
 export class LandingPageComponent {
