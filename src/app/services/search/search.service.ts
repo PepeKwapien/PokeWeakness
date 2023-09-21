@@ -10,7 +10,6 @@ import {
     switchMap,
     Subject,
     Observable,
-    shareReplay,
     BehaviorSubject
 } from 'rxjs';
 import { PokemonSearchOption } from '../../interfaces/pokemonSearchOption.interface';
