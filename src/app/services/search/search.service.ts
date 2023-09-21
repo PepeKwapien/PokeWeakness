@@ -69,7 +69,8 @@ export class SearchService implements OnDestroy {
     }
 
     public resetSuggestions() {
-        this._againstSubject.next([]);
+        this._againstSubject.complete();
+        this._againstSubject = new Subject();
     }
 
     ngOnDestroy(): void {
