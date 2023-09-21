@@ -15,6 +15,8 @@ body {
     font-family: Roboto, 'Helvetica Neue', sans-serif;
     background: rgb(238, 174, 202);
     background: linear-gradient(135deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 0.6811974789915967) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 app-root {

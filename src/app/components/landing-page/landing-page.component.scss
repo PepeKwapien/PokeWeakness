@@ -7,9 +7,17 @@ img {
 }
 
 .small-logo {
+    width: 100%;
     max-width: 3rem;
     margin-right: 2rem;
     margin-top: 0.9rem;
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .small-logo {
+        width: 3rem;
+    }
 }
 
 app-search-form {
