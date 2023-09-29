@@ -7,41 +7,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTableModule } from '@angular/material/table';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.component';
-import { TypeBoxComponent } from './components/type-box/type-box.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
-import { TypeEffectivenessTableComponent } from './components/type-effectiveness-table/type-effectiveness-table.component';
-import { AbilityTableComponent } from './components/ability-table/ability-table.component';
-import { TypeHighlightDirective } from './directives/type-highlight.directive';
-import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { StatsTableComponent } from './components/stats-table/stats-table.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { NotFoundModule } from './modules/not-found/not-found.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        SearchFormComponent,
-        SearchInputComponent,
-        LandingPageComponent,
-        PokemonPageComponent,
-        TypeBoxComponent,
-        SpinnerComponent,
-        ExpansionPanelComponent,
-        TypeEffectivenessTableComponent,
-        AbilityTableComponent,
-        TypeHighlightDirective,
-        ProgressBarComponent,
-        StatsTableComponent,
-        NotFoundComponent
-    ],
+    declarations: [AppComponent, SearchFormComponent, SearchInputComponent, LandingPageComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -52,8 +27,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
         ReactiveFormsModule,
         MatAutocompleteModule,
         MatCardModule,
-        MatExpansionModule,
-        MatTableModule
+        SharedModule,
+        NotFoundModule
     ],
     providers: [],
     bootstrap: [AppComponent]

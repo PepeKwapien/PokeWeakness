@@ -1,10 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
-import { EMPTY, Observable, Subscription, catchError, first } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { SearchService } from 'src/app/services/search/search.service';
-import { PokemonGeneralInformation } from 'src/app/interfaces/pokemonGeneralInformation.interface';
-import { RoutingService } from 'src/app/services/routing/routing.service';
 
 @Component({
     selector: 'app-pokemon-page',

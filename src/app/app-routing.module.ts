@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
     {
         path: '',
         children: [
-            { path: 'missingno', component: NotFoundComponent, pathMatch: 'full' },
-            { path: ':pokemon', component: PokemonPageComponent, pathMatch: 'full' }
+            {
+                path: 'missingno',
+                loadChildren: () => import('./modules/not-found/not-found.module').then((m) => m.NotFoundModule)
+            },
+            {
+                path: ':pokemon',
+                loadChildren: () => import('./modules/pokemon-page/pokemon-page.module').then((m) => m.PokemonPageModule)
+            }
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' }
