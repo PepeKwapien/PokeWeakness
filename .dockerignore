@@ -1,0 +1,14 @@
+# Ignore development and build files
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+
+# Ignore editor and IDE files
+.vscode
+.idea
+
+# Ignore Docker-related files if they exist in your project
+Dockerfile
+.dockerignore
