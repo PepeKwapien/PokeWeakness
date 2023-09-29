@@ -52,7 +52,6 @@ export class PokemonService implements OnDestroy {
 
         this._pokemonGeneralInformationSubscription$ = this._pokemonNameSubject$
             .pipe(
-                tap((name) => console.log(name)),
                 map((name) => name.trim()),
                 distinctUntilChanged(),
                 filter((name) => name.length !== 0),
