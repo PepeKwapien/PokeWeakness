@@ -1,20 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import {
-    BehaviorSubject,
-    EMPTY,
-    Observable,
-    Subscription,
-    catchError,
-    distinctUntilChanged,
-    filter,
-    map,
-    switchMap,
-    tap
-} from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 import { PokemonGeneralInformation } from 'src/app/interfaces/pokemonGeneralInformation.interface';
 import { environment } from 'src/environments/environment.development';
 import { RoutingService } from '../routing/routing.service';
+import { shouldSubscriptionBeRereated } from 'src/app/helpers/subscription-creation-validator.helper';
 
 @Injectable({
     providedIn: 'root'
@@ -43,11 +33,8 @@ export class PokemonService implements OnDestroy {
     }
 
     public createPokemonGeneralSubscription(): void {
-        if (this._pokemonGeneralInformationSubscription$ !== undefined && !this._pokemonGeneralInformationSubscription$.closed) {
+        if (!shouldSubscriptionBeRereated(this._pokemonGeneralInformationSubscription$)) {
             return;
-        }
-        if (this._pokemonGeneralInformationSubscription$ !== undefined) {
-            this._pokemonGeneralInformationSubscription$.unsubscribe();
         }
 
         this._pokemonGeneralInformationSubscription$ = this._pokemonNameSubject$

@@ -1,5 +1,5 @@
 <app-search-input
     [inputControl]="againstFormControl"
-    [searchOptions]="searchService.againstSubject | async"
+    [searchOptions]="searchService.searchedPokemonSubject | async"
     (pokemonName)="notifyWithPokemonName($event)"
     [formLoading]="(searchService.searchRequestProcessing | async) === true"></app-search-input>

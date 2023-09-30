@@ -14,38 +14,21 @@ import {
 } from 'rxjs';
 import { PokemonSearchOption } from '../../interfaces/pokemonSearchOption.interface';
 import { environment } from 'src/environments/environment.development';
+import { shouldSubscriptionBeRereated } from 'src/app/helpers/subscription-creation-validator.helper';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SearchService implements OnDestroy {
     private _searchFormGroup: FormGroup;
-    private _subscriptions: Subscription = new Subscription();
-    private _againstSubject: Subject<PokemonSearchOption[]>;
-    private _searchRequestProcessing: BehaviorSubject<boolean> = new BehaviorSubject(false);
+    private _searchsubscription$!: Subscription;
+    private _searchedPokemonsSubject$: Subject<PokemonSearchOption[]>;
+    private _searchRequestProcessing$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     constructor(private http: HttpClient, formBuilder: FormBuilder) {
-        this._againstSubject = new Subject();
+        this._searchedPokemonsSubject$ = new Subject();
         this._searchFormGroup = formBuilder.group({ pokemon: '' });
-
-        this._subscriptions.add(
-            this._searchFormGroup
-                .get('pokemon')
-                ?.valueChanges.pipe(
-                    map((phrase) => phrase.trim()),
-                    debounceTime(300),
-                    distinctUntilChanged(),
-                    filter((phrase) => phrase.length !== 0),
-                    switchMap((phrase) => {
-                        this._searchRequestProcessing.next(true);
-                        return this.getSearchSuggestions(phrase);
-                    })
-                )
-                .subscribe((value) => {
-                    this._searchRequestProcessing.next(false);
-                    this._againstSubject.next(value);
-                })
-        );
+        this.createSearchPhraseSubscription();
     }
 
     public get pokemonFormControl(): FormControl {
@@ -56,12 +39,12 @@ export class SearchService implements OnDestroy {
         return this._searchFormGroup.get('pokemon')!.value;
     }
 
-    public get againstSubject(): Observable<PokemonSearchOption[]> {
-        return this._againstSubject;
+    public get searchedPokemonSubject(): Observable<PokemonSearchOption[]> {
+        return this._searchedPokemonsSubject$;
     }
 
     public get searchRequestProcessing(): Observable<boolean> {
-        return this._searchRequestProcessing;
+        return this._searchRequestProcessing$;
     }
 
     public getSearchSuggestions(pokemonName: string): Observable<PokemonSearchOption[]> {
@@ -69,11 +52,43 @@ export class SearchService implements OnDestroy {
     }
 
     public resetSuggestions() {
-        this._againstSubject.complete();
-        this._againstSubject = new Subject();
+        this._searchedPokemonsSubject$.complete();
+        this._searchedPokemonsSubject$ = new Subject();
     }
 
     ngOnDestroy(): void {
-        this._subscriptions.unsubscribe();
+        this._searchsubscription$.unsubscribe();
+    }
+
+    public createSearchPhraseSubscription() {
+        if (!shouldSubscriptionBeRereated(this._searchsubscription$)) {
+            return;
+        }
+
+        this._searchsubscription$ = this.pokemonFormControl!.valueChanges.pipe(
+            map((phrase) => phrase.trim()),
+            debounceTime(300),
+            distinctUntilChanged(),
+            filter((phrase) => phrase.length !== 0),
+            switchMap((phrase) => {
+                this._searchRequestProcessing$.next(true);
+                return this.getSearchSuggestions(phrase);
+            })
+        ).subscribe({
+            next: (value) => {
+                this._searchRequestProcessing$.next(false);
+                this._searchedPokemonsSubject$.next(value);
+            },
+            error: () => {
+                this._searchRequestProcessing$.next(false);
+                this._searchedPokemonsSubject$.next([
+                    { number: 0, image: 'assets/images/missingno.webp', name: 'There was en error' }
+                ]);
+            }
+        });
+
+        // This automatically trigerrs the pipe in case of an recreating when experiencing an error
+        // Without it the subscription would fire only after typing second character after an error
+        this.pokemonFormControl.patchValue(this.pokemonFormControlValue);
     }
 }
