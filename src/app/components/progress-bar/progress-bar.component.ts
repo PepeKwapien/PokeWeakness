@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressBarComponent {
     @Input() value: number = 0;
-    @Input() max: number = 140;
+    @Input() max: number = 120;
 
     public get fillPercentage(): number {
         return Math.min((this.value / this.max) * 100, 100);
