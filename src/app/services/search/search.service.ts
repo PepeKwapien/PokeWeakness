@@ -82,7 +82,7 @@ export class SearchService implements OnDestroy {
             error: () => {
                 this._searchRequestProcessing$.next(false);
                 this._searchedPokemonsSubject$.next([
-                    { number: 0, image: 'assets/images/missingno.webp', name: 'There was en error' }
+                    { number: 0, image: 'assets/images/missingno.webp', name: 'There was an error' }
                 ]);
             }
         });
