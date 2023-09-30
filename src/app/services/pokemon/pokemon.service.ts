@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 import { PokemonGeneralInformation } from 'src/app/interfaces/pokemonGeneralInformation.interface';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { RoutingService } from '../routing/routing.service';
 import { shouldSubscriptionBeRereated } from 'src/app/helpers/subscription-creation-validator.helper';
 

@@ -13,7 +13,7 @@ import {
     BehaviorSubject
 } from 'rxjs';
 import { PokemonSearchOption } from '../../interfaces/pokemonSearchOption.interface';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { shouldSubscriptionBeRereated } from 'src/app/helpers/subscription-creation-validator.helper';
 
 @Injectable({
