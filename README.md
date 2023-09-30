@@ -19,4 +19,4 @@ Simply just type a name of a Pokemon you want to beat the Grimer out of and chec
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/e2865e09-4193-42d0-a498-762baaa8f872)
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/8af04fae-4a61-46ec-9d64-2b2bc167c4d9)
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/f83c5408-7173-4357-a02f-21c529042472)
-![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/74085388-12b8-4616-a1ae-ea765639b514)
+![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/2a4654e2-59ac-4379-97a0-4c2ce750f3bf)
