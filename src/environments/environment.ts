@@ -1,1 +1,1 @@
-export const environment = { pokemonApiUrl: 'https://localhost:7237/' };
+export const environment = { pokemonApiUrl: 'https://localhost:7237/', env: 'develop' };
