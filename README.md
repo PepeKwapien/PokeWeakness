@@ -14,9 +14,9 @@ For this app to work it requires my [PokemonAPI](https://github.com/PepeKwapien/
 
 Simply just type a name of a Pokemon you want to beat the Grimer out of and check things like type effectiveness, abilities and stats so you don't get surprised by things like Purugly's Speed (no seriously, check it, it's nuts)
 
-![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/25f661bd-6722-4608-bd25-23d81ddcf6b0)
-![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/1e188b9a-9808-415f-8f56-10c5c195eeef)
-![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/e2865e09-4193-42d0-a498-762baaa8f872)
+![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/c91e168c-20c0-4cab-bab5-66571099a055)
+![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/27679098-6b02-49f5-9614-2edf892867b3)
+![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/4e2967f9-437f-4b58-b773-f7b02fb123ec)
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/8af04fae-4a61-46ec-9d64-2b2bc167c4d9)
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/f83c5408-7173-4357-a02f-21c529042472)
 ![image](https://github.com/PepeKwapien/PokeWeakness/assets/51708716/2a4654e2-59ac-4379-97a0-4c2ce750f3bf)
