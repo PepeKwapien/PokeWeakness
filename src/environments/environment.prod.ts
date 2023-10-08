@@ -1,1 +1,1 @@
-export const environment = { pokemonApiUrl: 'https://localhost:7237', env: 'production' };
+export const environment = { pokemonApiUrl: 'https://pokemonapipepe.azurewebsites.net', env: 'production' };
