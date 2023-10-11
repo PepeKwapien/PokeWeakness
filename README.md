@@ -10,7 +10,8 @@ I've been playing Pokemons for more than 15 years and even I forget what's effec
 
 ## Usage
 
-For this app to work it requires my [PokemonAPI](https://github.com/PepeKwapien/PokemonBasics) (I am currently trying to deploy it somewhere. I'll update this section once I figure it out)
+For this app to work it requires my [PokemonAPI](https://github.com/PepeKwapien/PokemonBasics)
+Curently entire system is deployed to [Cloud](https://victorious-field-08360b803.3.azurestaticapps.net/)
 
 Simply just type a name of a Pokemon you want to beat the Grimer out of and check things like type effectiveness, abilities and stats so you don't get surprised by things like Purugly's Speed (no seriously, check it, it's nuts)
 
