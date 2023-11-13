@@ -9,7 +9,7 @@ Everyone would like to quickly check what's effective and what's not so effectiv
 I've been playing Pokemons for more than 15 years and even I forget what's effective against Starmie or Spiritomb. Who wants to remember that anyway?
 
 ## Usage
-Curently entire system is deployed to [Cloud](https://victorious-field-08360b803.3.azurestaticapps.net/).
+Curently entire system is deployed to [Cloud](https://victorious-field-08360b803.3.azurestaticapps.net/). (My free subscription is running out. I might need to update it)
 
 Have patience when launching it for the first time. I'm using free services and tiers to host everything for now. With the first request you might encounter my inactive database which likes to cosplay Snorlax. It will wake up after 1-2 minutes after first request so have patience Trainer!
 
