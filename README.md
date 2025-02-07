@@ -10,8 +10,8 @@ I've been playing Pokemons for more than 15 years and even I forget what's effec
 
 ## Run
 ~~Curently entire system is deployed to [Cloud](https://pokeweakness.kwapien.dev/).~~
-While above link will stil work, the app is deployed to my [home server](https://pokeweakness.kwapien.dev/).
-If it doesn't work, I unplugged my server ¯\_(ツ)_/¯
+While the cloud domain will stil work, the app is deployed on my [home server](https://pokeweakness.kwapien.dev/).
+If it doesn't work, I unplugged it ¯\_(ツ)_/¯
 
 You can run the app with ng serve or using dockerfile.
 For this app to work it requires my [PokemonAPI](https://github.com/PepeKwapien/PokemonBasics) - simply provide url to it in environment object.
