@@ -1,1 +1,1 @@
-export const environment = { pokemonApiUrl: 'http://localhost:8080', env: 'docker' };
+export const environment = { pokemonApiUrl: '/api', env: 'docker' };

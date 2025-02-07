@@ -1,0 +1,14 @@
+services:
+  pokeweakness:
+    image: paulstump/pokemon:pokeweakness.1.0
+    container_name: pokeweakness
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    networks:
+      - pokeweakness-network
+
+networks:
+  pokeweakness-network:
+    driver: bridge
+    name: pokeweakness-network
